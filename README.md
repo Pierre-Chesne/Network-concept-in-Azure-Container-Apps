@@ -8,4 +8,11 @@ Les applications dans Azure Container Apps fonctionnent dans un contexte d'envir
 <img src="https://learn.microsoft.com/en-us/azure/container-apps/media/environments/azure-container-apps-environments.png" alt="Dinosaur" />
 
 __Environnement__<br>
-Il existe deux types d'environnement
+Il existe deux types d'environnement:
+- "Workload profiles"
+- "Consumption only"
+
+Pour le __"Workload profiles"__
+
+Pour le __"Consuption only"__
+
