@@ -13,6 +13,32 @@ Il existe deux types d'environnement:
 - "Consumption only"
 
 Pour le __"Workload profiles"__
+Les "Workload profiles" permettent de disposer d'une capacité de calcul dédiée (mémoire et CPU) pour les applications déployées dans un environnement Container Apps. Microsoft prend en charge "Workload profiles" à usage général (General purpose D-series - jusqu'à 32vCPU/128GiB) et optimisés en mémoire (Memory optimized E-series - jusqu'à 32vCPU/256GiB). Microsoft propose également un "Workload profiles" avec GPU (GPU-NC8as-T4 - 8vCPU/56GiB).<br>
+En attribuant plusieurs "Workload profiles" à un environnement ACA, on peut gérer différents types de "workload". Par exemple, nous pouvons garantir que les applications gourmandes en ressources s'exécutent sur du matériel adapté et que les applications génériques s'exécutent sur un pool de ressources différent.
+
+
+
+
+
+
+```
+PREFIX="demo-network-aca"
+LOCATION="westeurope"
+
+az group create \
+  --name "${PREFIX}-rg" \
+  --location "$LOCATION"
+
+az containerapp env create \
+  --name "${PREFIX}-env" \
+  --resource-group "${PREFIX}-rg" \
+  --logs-destination none \
+  --location "$LOCATION"
+
+```
+
+
+
+
 
 Pour le __"Consuption only"__
-
