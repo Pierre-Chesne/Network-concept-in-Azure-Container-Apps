@@ -14,7 +14,7 @@ Il existe deux types d'environnement:
 
 
 Pour l'environnement de type __"Consuption only"__<br>
-Historiquement c'est le premier type d'environnemnt qui était proposé lors de la création du service Azure Container Apps/<br>
+Historiquement, c'est le premier type d'environnemnt qui était proposé lors de la création du service Azure Container Apps/<br>
 L'environnement __"Consuption only"__ seule exécute l'application à l'aide de ressources de calcul exclusivement allouées à la demande.En d'autres termes, vous ne payez que pour les ressources consommées par votre application. De plus les environnements "Consuption only" ont accès jusqu'à 4 vCPU avec 8 Go de mémoire avec les choix suivants<br>
 <img width='150' src='./images/img-00.png'/><br>
 Il n'y a pas d'accès aux GPU dans un environnement Consommation uniquement.
