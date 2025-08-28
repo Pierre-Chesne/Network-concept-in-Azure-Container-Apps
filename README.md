@@ -27,6 +27,17 @@ En attribuant plusieurs "Workload profiles" à un environnement ACA, on peut gé
 Depuis la V2 de l'environnement "Workload profiles" il y a la possibilité de faire un mixte comme ci-dessous:<br><br>
 <img src='./images/img-01-1.png'/><br>
 
+b) __Type de réseau virtuel__<br>
+Par défaut, les applications conteneurisées sont intégrées au réseau Azure un vnet et subnet sont déployés mais non visible dans la console Azure<br>
+Dans la plupart du temps on intègrera un environnement Azure Container Apps dans un Vnet et Subnet existant (intergration avec d'autres service Azure ex: NSG, Application Gateway, AzFireWall, private point, etc ). Une fois que l'environnement est intégré dans un Vnet/Subnet on ne peut plus modifier !<br>
+Les deux types d'environnements présentent également certaines différences très importantes au niveau du réseau.<br>
+Pour un environnement "Workload profiles"<br>
+Prise en charge :  des UDR, la sortie vers Internet via la NAT Gateway et la création de points de terminaison privés dans l'environnement d'application conteneurisé. La taille minimale requise du sous-réseau est /27.<br>
+Pour un environnement "Consumption only"<br>
+Ne prend pas charge : les UDR, la sortie vers Internet via la NAT Gateway, pas de peering via une gateway distante et pas d'autre custom egress. La taille minimale requise pour le sous-réseau est /23
+
+
+
 
 
 
