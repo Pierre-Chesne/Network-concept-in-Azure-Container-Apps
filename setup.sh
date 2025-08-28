@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PREFIX="demo-network-aca-1"
+PREFIX="demo-network-aca-0"
 LOCATION="westeurope"
 
 
