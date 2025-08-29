@@ -18,7 +18,6 @@ Les applications dans Azure Container Apps fonctionnent dans un contexte d'envir
 
 <img src="https://learn.microsoft.com/en-us/azure/container-apps/media/environments/azure-container-apps-environments.png"/>
 
-a) __Environnement__<br>
 Il existe deux types d'environnement:
 - "Consumption only"
 - "Workload profiles"
@@ -39,7 +38,7 @@ Depuis la V2 de l'environnement "Workload profiles" il y a la possibilité de fa
 <img src='./images/img-01-1.png'/><br>
 Lorsque que l'on déploie un environnement (portail / AzCLI / autres) il est de base en "Workload profiles". Pour pouvoir déployer un environnement en "Consumption only" il faut déployer en Command Line/IaC ex AzCli: `az containerapp env create --name <> --resource-group <> --enable-workload-profiles false`
 
-b) __Type de réseau virtuel__<br>
+3. __Type de réseau virtuel__<br>
 Par défaut, les applications conteneurisées sont intégrées au réseau Azure, un vnet et subnet sont déployés mais non visible dans la console Azure<br>
 Dans la plupart du temps on intègrera un environnement Azure Container Apps dans un Vnet et Subnet existant (intergration avec d'autres service Azure ex: NSG, Application Gateway, AzFireWall, private point, etc ). Une fois que l'environnement est intégré dans un Vnet/Subnet on ne peut plus modifier !<br>
 Les deux types d'environnements présentent également certaines différences très importantes au niveau du réseau.<br>
