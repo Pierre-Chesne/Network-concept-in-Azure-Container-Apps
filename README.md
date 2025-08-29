@@ -1,11 +1,22 @@
 # Network-concept-in-Azure-Container-Apps
 1. __Introduction__ </br>
+On ne présente plus Azure Container Apps, pour rappel, Azure Container Apps est une plateforme serverless qui permet d'executer des applications modernes et des microservices à l'aide de conteneurs sans avoir à gérer d'infrastructure trop complexe. Ce service dans Azure s'appuie sur des technologies :<br>
+- Kubernetes
+- KEDA
+- Envoy
+- DAPR
+
+<img src="https://learn.microsoft.com/fr-fr/azure/container-apps/media/overview/azure-container-apps-example-scenarios.png"/>
+
+<br>
+
+2. __Environnement__ </br>
 Les applications dans Azure Container Apps fonctionnent dans un contexte d'environnement qui s'exécute dans son propre réseau virtuel. Lorsque l'on créez un environnement Azure Container Apps, plusieurs éléments clés doivent être pris en compte pour déterminer les capacités réseau des applications conteneurisées:
 - Type d'environnement
 - Type de réseau virtuel
 - Niveau d'accessibilité
 
-<img src="https://learn.microsoft.com/en-us/azure/container-apps/media/environments/azure-container-apps-environments.png" alt="Dinosaur" />
+<img src="https://learn.microsoft.com/en-us/azure/container-apps/media/environments/azure-container-apps-environments.png"/>
 
 a) __Environnement__<br>
 Il existe deux types d'environnement:
@@ -29,7 +40,7 @@ Depuis la V2 de l'environnement "Workload profiles" il y a la possibilité de fa
 Lorsque que l'on déploie un environnement (portail / AzCLI / autres) il est de base en "Workload profiles". Pour pouvoir déployer un environnement en "Consumption only" il faut déployer en Command Line/IaC ex AzCli: `az containerapp env create --name <> --resource-group <> --enable-workload-profiles false`
 
 b) __Type de réseau virtuel__<br>
-Par défaut, les applications conteneurisées sont intégrées au réseau Azure un vnet et subnet sont déployés mais non visible dans la console Azure<br>
+Par défaut, les applications conteneurisées sont intégrées au réseau Azure, un vnet et subnet sont déployés mais non visible dans la console Azure<br>
 Dans la plupart du temps on intègrera un environnement Azure Container Apps dans un Vnet et Subnet existant (intergration avec d'autres service Azure ex: NSG, Application Gateway, AzFireWall, private point, etc ). Une fois que l'environnement est intégré dans un Vnet/Subnet on ne peut plus modifier !<br>
 Les deux types d'environnements présentent également certaines différences très importantes au niveau du réseau.<br>
 Pour un environnement "Workload profiles"<br>
