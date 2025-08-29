@@ -26,6 +26,7 @@ Microsoft prend en charge avec les "Workload profiles" des VM à usage général
 En attribuant plusieurs "Workload profiles" à un environnement ACA, on peut gérer différents types de "workload". Par exemple, on peut garantir que les applications gourmandes en ressources s'exécutent sur du matériel adapté (General purpose D-series, Memory optimized E-series et GPU-NC8as-T4 ) et que les applications génériques s'exécutent sur un pool de ressources différent.<br>
 Depuis la V2 de l'environnement "Workload profiles" il y a la possibilité de faire un mixte comme ci-dessous:<br><br>
 <img src='./images/img-01-1.png'/><br>
+Lorsque que l'on déploie un environnement (portail / AzCLI / autres) il est de base en "Workload profiles". Pour pouvoir déployer un environnement en "Consumption only" il faut déployer en Command Line/IaC ex AzCli: `az containerapp env create --name <> --resource-group <> --enable-workload-profiles false`
 
 b) __Type de réseau virtuel__<br>
 Par défaut, les applications conteneurisées sont intégrées au réseau Azure un vnet et subnet sont déployés mais non visible dans la console Azure<br>
@@ -34,7 +35,8 @@ Les deux types d'environnements présentent également certaines différences tr
 Pour un environnement "Workload profiles"<br>
 Prise en charge :  des UDR, la sortie vers Internet via la NAT Gateway et la création de points de terminaison privés dans l'environnement d'application conteneurisé. La taille minimale requise du sous-réseau est /27.<br>
 Pour un environnement "Consumption only"<br>
-Ne prend pas charge : les UDR, la sortie vers Internet via la NAT Gateway, pas de peering via une gateway distante et pas d'autre custom egress. La taille minimale requise pour le sous-réseau est /23
+Ne prend pas charge : les UDR, la sortie vers Internet via la NAT Gateway, pas de peering via une gateway distante et pas d'autre custom egress. La taille minimale requise pour le sous-réseau est /23<br>
+
 
 
 
